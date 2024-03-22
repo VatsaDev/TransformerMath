@@ -3,7 +3,7 @@ import pickle
 import requests
 import numpy as np
 
-# download the tiny shakespeare dataset
+# download the dataset
 input_file_path = os.path.join(os.path.dirname(__file__), 'input.txt')
 if not os.path.exists(input_file_path):
     data_url = 'https://huggingface.co/datasets/VatsaDev/mathtext/resolve/main/add.txt?download=true'
@@ -53,10 +53,3 @@ meta = {
 }
 with open(os.path.join(os.path.dirname(__file__), 'meta.pkl'), 'wb') as f:
     pickle.dump(meta, f)
-
-# length of dataset in characters:  1115394
-# all the unique characters:
-#  !$&',-.3:;?ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
-# vocab size: 65
-# train has 1003854 tokens
-# val has 111540 tokens
